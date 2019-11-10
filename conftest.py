@@ -16,7 +16,7 @@ def browser(request):
         print("\nstart browser for test..")
         browser = webdriver.Chrome(options=option)
     else:
-        print('Error, you not choose browser chrome!')
+        raise pytest.UsageError("Error, you not choose browser chrome")
     yield browser
     print("\nquit browser..")
     browser.quit()
